@@ -7,7 +7,8 @@ class SpellChecker {
        const  words = input.split(" ");
 
       const n = words.map((word) => { 
-        if(this.wordBank.includes(word)){
+        //   const m = word.toLowerCase();
+        if(this.wordBank.includes(word.toLowerCase())){
             return word; 
         } else {
             return `~${word}~`

@@ -22,9 +22,19 @@ describe('SpellChecker', () => {
             spellChecker = new SpellChecker;
             expect(spellChecker.spellCheck('how are you')).toBe('how are you');
         })
+        it('returns the highlighted word with ~ if spelt incorrectly', () => {
+            spellChecker = new SpellChecker;
+            expect(spellChecker.spellCheck('how are your')).toBe('how are ~your~');
+        })
+
+
+        it('returns the string if spelt correctly', () => {
+            spellChecker = new SpellChecker;
+            expect(spellChecker.spellCheck('How are you')).toBe('How are you');
+        })
         // it('returns the highlighted word with ~ if spelt incorrectly', () => {
         //     spellChecker = new SpellChecker;
-        //     expect(spellChecker.spellCheck('b')).toBe('~b~');
+        //     expect(spellChecker.spellCheck('how are your')).toBe('how are ~your~');
         // })
     })
 })
